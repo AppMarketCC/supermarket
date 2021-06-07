@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ReSuperMarket.h" />
     <ClInclude Include="supermarket.h" />
   </ItemGroup>
   <ItemGroup>

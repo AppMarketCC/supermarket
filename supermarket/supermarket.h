@@ -5,8 +5,10 @@ using namespace std;
 int G = 0;//定义全局变量//现有货物的总数
 int S = 0;//staff员工总数
 double T = 0;//总共的营业额
+
+
 //创建第一个类（货物）
-class goods
+class Goods
 {
 public:
 	string id;//
@@ -14,14 +16,22 @@ public:
 	double price;//价格
 	int num;//编号
 }goods[10000];//定义数组
-class staff//第二个类（职员）
+
+
+/*第二个类（职员）*/
+class staff
 {
 public:
 	string id;
 	string name;
 	double sale;//营业额
 }staff[1000];
-class manager
+
+
+/*
+管理类
+*/
+class Manager
 {
 public:
 	virtual void show()//虚函数
@@ -29,7 +39,9 @@ public:
 		cout << "管理基类的show方法" << endl;
 	}
 };
-class salemanager :public manager//派生的一个类
+
+/*销售管理类*/
+class salemanager :public Manager//派生的一个类
 {
 public:
 	string salemenu;
@@ -147,7 +159,9 @@ public:
 		} while (n);
 	}
 };
-class savemanager :public manager
+
+/*仓库管理*/
+class savemanager :public Manager
 {
 public:
 	string savemenu;
@@ -171,7 +185,9 @@ public:
 		} while (n);
 	}
 };
-class buymanager :public manager
+
+/*采购管理*/
+class buymanager :public Manager
 {
 public:
 	string buymenu;
@@ -228,7 +244,9 @@ public:
 		} while (n);
 	}
 };
-class moneymanager :public manager
+
+/*财务管理类*/
+class moneymanager :public Manager
 {
 public:
 	string moneymenu;
@@ -247,6 +265,8 @@ public:
 		} while (n);
 	}
 };
+
+/*表格*/
 class form
 {
 public:
@@ -287,7 +307,7 @@ public:
 		} while (n);
 	}
 	//向菜单类对象添加功能对象
-	void addfun(manager* m)
+	void addfun(Manager* m)
 	{
 		m->show();
 	}
