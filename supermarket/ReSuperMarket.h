@@ -38,6 +38,8 @@ public:
     }
     friend class Supermarket;
 };
+
+/*³¬¼¶ÊÐ³¡*/
 class Supermarket
 {
 private:
